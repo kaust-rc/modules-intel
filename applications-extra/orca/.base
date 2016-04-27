@@ -3,18 +3,11 @@
 #  Module for use with 'environment-modules' package:
 #
 
-source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl 
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 #set       ::dir_name         r
 GeneralAppSetup
 
-
-if ![is-loaded openmpi/1.8.3/intel-2015] {
-    module add intel/15
-    module add mpi-openmpi/1.8.3-intel-15
-}
-
-prereq intel/15 
-prereq mpi-openmpi/1.8.3-intel-15
+AddDeps "openmpi/1.8.6/intel-2015"
 
 #Specific setup goes here, license files, path setup, etc
 #prepend-path PATH $app_dir/bin
@@ -23,7 +16,3 @@ prereq mpi-openmpi/1.8.3-intel-15
 prepend-path    PATH            $app_dir/bin
 # prepend-path    LD_LIBRARY_PATH $app_dir/lib
 # prepend-path    CPATH $app_dir/include
-
-
-
-

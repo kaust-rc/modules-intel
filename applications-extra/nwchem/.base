@@ -1,40 +1,42 @@
 #%Module 1.0 -*- tcl -*-
 #
 #  Module for use with 'environment-modules' package:
-# 
+#
 
-source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl 
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 
 GeneralAppSetup
 
-if ![is-loaded gcc/4.6.0] {
-    module add gcc/4.6.0
-}
-prereq gcc/4.6.0
-if ![is-loaded mpi-openmpi/1.4.3-gcc-4.6.0] {
-    module add mpi-openmpi/1.4.3-gcc-4.6.0
-}
-prereq mpi-openmpi/1.4.3-gcc-4.6.0
-if ![is-loaded atlas] {
-    module add atlas
-}
-prereq atlas
-if ![is-loaded blas] {
-    module add blas
-}
-prereq blas
-if ![is-loaded lapack] {
-    module add lapack
-}
-prereq lapack
-if ![is-loaded blacs] {
-    module add blacs
-}
-prereq blacs
-if ![is-loaded scalapack] {
-    module add scalapack
-}
-prereq scalapack
+
+AddDeps "openmpi/1.8.6/gcc-4.8.1, atlas"
+# if ![is-loaded gcc/4.6.0] {
+#     module add gcc/4.6.0
+# }
+# prereq gcc/4.6.0
+# if ![is-loaded mpi-openmpi/1.4.3-gcc-4.6.0] {
+#     module add mpi-openmpi/1.4.3-gcc-4.6.0
+# }
+# prereq mpi-openmpi/1.4.3-gcc-4.6.0
+# if ![is-loaded atlas] {
+#     module add atlas
+# }
+# prereq atlas
+# if ![is-loaded blas] {
+#     module add blas
+# }
+# prereq blas
+# if ![is-loaded lapack] {
+#     module add lapack
+# }
+# prereq lapack
+# if ![is-loaded blacs] {
+#     module add blacs
+# }
+# prereq blacs
+# if ![is-loaded scalapack] {
+#     module add scalapack
+# }
+# prereq scalapack
 
 
 # this must be set, otherwise it'll look in the original installation directory

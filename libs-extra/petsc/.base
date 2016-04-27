@@ -1,18 +1,18 @@
 #%Module 1.0 -*- tcl -*-
 #
 #  Module for use with 'environment-modules' package:
-source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup 
 
 # no conflicts
 
-# no prereq 
-prereq   load gcc/4.6.0
-prereq   load mpi-openmpi/1.4.3-gcc-4.6.0
-prereq   load cmake
-prereq   load lapack scalapack
-prereq   load atlas
-prereq   load python
+AddDeps "openmpi/1.8.6/gcc-4.8.1, python/2.7.10/gcc-4.8.1"
+#prereq   load gcc/4.6.0
+#prereq   load mpi-openmpi/1.4.3-gcc-4.6.0
+#prereq   load cmake
+#prereq   load lapack scalapack
+#prereq   load atlas
+#prereq   load python
 
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib

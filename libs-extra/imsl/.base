@@ -2,15 +2,14 @@
 #
 #  Module for perl use with 'environment-modules' package:
 # 
-source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup
 
 # Additional conflicts
 #conflict name
 
 # Prereqs
-prereq ifort/11.1.075
-prereq mpi-openmpi/1.6.4-icc-11.1
+AddDeps "openmpi/1.8.6/intel-2015"
 
 # Specific setup goes here, license files, path setup, etc
 

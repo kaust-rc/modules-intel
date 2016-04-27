@@ -1,7 +1,7 @@
 #%Module 1.0 -*- tcl -*-
 #
 #  Module for AVIZO use with 'environment-modules' package:
-# 
+#
 source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
 GeneralAppSetup
 
@@ -9,7 +9,7 @@ GeneralAppSetup
 #conflict name
 conflict paraview-server
 
-AddDeps "applications-extra, compilers-extra, libs-extra, intel/15, mpi-openmpi/1.8.3-intel-15, python/2.7.9, boost/1.49.0, cmake/3.4.0-intel-15, mesa/10.6.1/intel-15"
+AddDeps "openmpi/1.8.6/intel-2015, python/2.7.10/intel-2015, boost/1.60/intel-2015, cmake/3.5.1/intel-2015, mesa/10.6.1/intel-2015"
 
 
 # Specific setup goes here, license files, path setup, etc

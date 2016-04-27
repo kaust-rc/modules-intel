@@ -2,8 +2,8 @@
 #
 #  GNU gcc module for use with 'environment-modules' package:
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
-#GeneralAppSetup ${version}/$distro
-GeneralCompilerSetup
+GeneralAppSetup ${version}/$distro
+#GeneralCompilerSetup
 
 #set myver [exec gcc --version | head -n1 | awk "{ print \$3 }" ]
 #puts stderr "Initial $module_name version: $myver"

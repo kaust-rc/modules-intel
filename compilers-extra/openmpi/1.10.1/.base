@@ -1,0 +1,29 @@
+#%Module 1.0 -*- tcl -*-
+
+# Source common environment and then setup variables
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+GeneralAppSetup
+
+# Load compiler based on mdoule build
+set ::module_to_load [string map {- /} $::module_build]
+AddDeps "$module_to_load"
+
+# Specific setup goes here, license files, path setup, etc
+prepend-path PATH $app_dir/bin
+prepend-path MANPATH $app_dir/share/man
+prepend-path LD_LIBRARY_PATH $app_dir/lib
+prepend-path LIBRARY_PATH $app_dir/lib
+prepend-path CPATH $app_dir/include
+
+## Modified by hassanns on April 18th, 2016
+# to use pkg_config .pc files
+#
+prepend-path PKG_CONFIG_PATH $app_dir/lib/pkgconfig
+#
+
+setenv MPICC $app_dir/bin/mpicc
+setenv CC $app_dir/bin/mpicc
+setenv FC $app_dir/bin/mpifort
+setenv F90 $app_dir/bin/mpif90
+setenv F77 $app_dir/bin/mpif77
+setenv CXX $app_dir/bin/mpicxx

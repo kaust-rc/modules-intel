@@ -1,0 +1,20 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl
+GeneralAppSetup ${version}/$distro/$m_arch 
+
+# Additional conflicts
+conflict mpi-mvapich2 mpi-mpich3 mpi-mpich2 mpi-mpich
+
+# Prereqs
+if ![is-loaded gcc/4.8.1] {
+    module add gcc/4.8.1
+}
+prereq gcc/4.8.1
+
+# Specific setup goes here, license files, path setup, etc
+prepend-path PATH $app_dir/bin
+prepend-path MANPATH $app_dir/share/man
+prepend-path LD_LIBRARY_PATH $app_dir/lib
+prepend-path LIBRARY_PATH $app_dir/lib
+prepend-path CPATH $app_dir/include

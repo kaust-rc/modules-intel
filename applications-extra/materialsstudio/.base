@@ -1,0 +1,30 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl
+GeneralAppSetup ${::version}/MaterialsStudio${::version}
+
+setenv MATERIALS_STUDIO $app_dir
+
+set lic_pack [file dirname $app_dir]/LicensePack
+set gw_root $app_dir/etc
+
+prepend-path PATH $lic_pack/linux/bin
+prepend-path PATH $app_dir/bin
+prepend-path PATH $gw_root/AmorphousCell/bin
+prepend-path PATH $gw_root/CASTEP/bin
+prepend-path PATH $gw_root/DFTB/bin
+prepend-path PATH $gw_root/DFTBpara/bin
+prepend-path PATH $gw_root/Discover/bin
+prepend-path PATH $gw_root/DMol3/bin
+prepend-path PATH $gw_root/DPD/bin
+prepend-path PATH $gw_root/Equilibria/bin
+prepend-path PATH $gw_root/GULP/bin
+prepend-path PATH $gw_root/Kinetix/bin
+prepend-path PATH $gw_root/MatServer/bin
+prepend-path PATH $gw_root/MesoDyn/bin
+prepend-path PATH $gw_root/ONETEP/bin
+prepend-path PATH $gw_root/QMERA/bin
+prepend-path PATH $gw_root/Scripting/bin
+prepend-path PATH $gw_root/VAMP/bin
+
+prepend-path LD_LIBRARY_PATH $app_dir/lib:$app_dir/lib/32:$lic_pack/linux/lib

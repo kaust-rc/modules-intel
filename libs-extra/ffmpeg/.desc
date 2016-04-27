@@ -1,0 +1,2 @@
+FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created.
+This package also includes x264, fdk-aac, libmp3lame, libopus, libogg, libvorbis, libvpx(vp8), faac, libtheora and libxvid.

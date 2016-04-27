@@ -1,0 +1,16 @@
+#%Module 1.0 -*- tcl -*-
+#
+#  Module for use with 'environment-modules' package:
+# 
+
+source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl 
+
+GeneralAppSetup
+
+AddDeps "gcc/4.6.0   ,mpi-openmpi/1.4.3-gcc-4.6.0,   atlas,blas,    lapack    ,blacs,scalapack"
+
+# this must be set, otherwise it'll look in the original installation directory
+setenv NWCHEM_BASIS_LIBRARY $app_dir/src/basis/libraries/
+setenv NWCHEM_NWPW_LIBRARY $app_dir/src/nwpw/libraryps/
+
+prepend-path PATH $app_dir/bin/LINUX64

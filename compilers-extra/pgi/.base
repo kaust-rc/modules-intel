@@ -1,5 +1,5 @@
 #%Module 1.0 -*- tcl -*-
-source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup ${version}
 #${version}/linux86-64/${version}
 

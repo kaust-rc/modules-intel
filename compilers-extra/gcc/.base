@@ -1,7 +1,7 @@
 #%Module 1.0 -*- tcl -*-
 #
 #  GNU gcc module for use with 'environment-modules' package:
-source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup ${version}/$distro 
 
 set myver [exec gcc --version | head -n1 | awk "{ print \$3 }" ]

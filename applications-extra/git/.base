@@ -1,6 +1,6 @@
 #%Module 1.0 -*- tcl -*-
 
-source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 
 # BEGIN - AA - 16 Oct 2015
 # The next two lines are fixes due to the fact that I copied it from Noor 1

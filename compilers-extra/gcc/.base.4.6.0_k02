@@ -44,8 +44,8 @@ prepend-path MANPATH $app_dir/share/man
 prepend-path INFOPATH $app_dir/share/info
 #prepend-path INFOPATH $apps_root/binutils/$binutils_ver/$distro/share/info
 
-set myver [exec gcc --version | head -n1 | awk "{ print \$3 }" ]
-puts stderr "Current $module_name version: $myver"
+#set myver [exec gcc --version | head -n1 | awk "{ print \$3 }" ]
+#puts stderr "Current $module_name version: $myver"
 
 # Ubuntu hotfix!
 # TODO: check OS

@@ -1,32 +1,11 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-#
 
-# Source common environment and then setup variables
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup
 
-
-# Load application based on mdoule build
 AddDeps "gcc/4.6.0, atlas, texlive"
 
 # Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib64
 prepend-path MANPATH $app_dir/share
-
-#source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
-#set       ::dir_name         r
-#GeneralAppSetup /3.1.2
-
-# Prereqs
-#prereq gcc
-# prereq changes since v3.x
-#prereq atlas
-#prereq texlive
-
-# Specific setup goes here, license files, path setup, etc
-#prepend-path PATH $app_dir/bin
-#prepend-path LD_LIBRARY_PATH $app_dir/lib64
-#prepend-path MANPATH $app_dir/share

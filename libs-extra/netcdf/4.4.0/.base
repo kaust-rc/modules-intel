@@ -1,8 +1,7 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
+
 source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
-GeneralAppSetup 
+GeneralAppSetup
 
 
 # Load compiler based on module build
@@ -20,11 +19,10 @@ set ::compiler_to_load [string map {- /} $compiler]
 
 AddDeps "$module_to_load, zlib/1.2.8/$compiler, szip/2.1/$compiler, $compiler_to_load"
 
-# Specific setup goes here, license files, path setup, etc
 setenv          NETCDF          $app_dir
 prepend-path    PATH            $app_dir/bin
 prepend-path    LD_LIBRARY_PATH $app_dir/lib
 prepend-path    LIBRARY_PATH    $app_dir/lib
 prepend-path    CPATH           $app_dir/include
-prepend-path    MANPATH         $app_dir/share/man 
+prepend-path    MANPATH         $app_dir/share/man
 prepend-path    INFOPATH        $app_dir/share/info

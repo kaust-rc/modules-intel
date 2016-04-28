@@ -1,12 +1,8 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-#
 
-# Source common KAUST setup
 source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
-
 GeneralAppSetup
+
 # Load compiler based on module build
 # # Find last dash in the string
 set ::last_dash_index [expr [string last - $module_build] - 1]
@@ -21,7 +17,7 @@ set ::module_to_load [string map {- /} $mpi]/$compiler
 
 AddDeps "$module_to_load, zlib/1.2.8/$compiler, szip/2.1/$compiler"
 
-# Specific setup goes here, license files, path setup, etc
+
 setenv HDF5        $app_dir
 setenv PHDF5       $app_dir
 
@@ -35,6 +31,5 @@ prepend-path  LD_LIBRARY_PATH  $app_dir/lib
 prepend-path  LD_RUN_PATH      $app_dir/lib
 prepend-path  CPATH            $app_dir/include
 
-# Set MANPATH and INFOPATH
 prepend-path MANPATH $app_dir/share/man
 prepend-path INFOPATH $app_dir/share/info

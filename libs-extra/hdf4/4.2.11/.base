@@ -1,6 +1,5 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
+
 source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
 GeneralAppSetup
 
@@ -9,11 +8,7 @@ set ::module_to_load [string map {- /} $::module_build]
 set ::compiler [string map {/ -} $::module_to_load]
 AddDeps "$module_to_load, zlib/1.2.8/$compiler, szip/2.1/$compiler, jpeg/9b/$compiler"
 
-# no conflicts
 
-# no prereq
-
-# Specific setup goes here, license files, path setup, etc
 setenv HDF4        $app_dir
 setenv PHDF4       $app_dir
 
@@ -27,6 +22,5 @@ prepend-path  LD_LIBRARY_PATH  $app_dir/lib
 prepend-path  LD_RUN_PATH      $app_dir/lib
 prepend-path  CPATH            $app_dir/include
 
-# Set MANPATH and INFOPATH
 prepend-path MANPATH $app_dir/share/man
 prepend-path INFOPATH $app_dir/share/info

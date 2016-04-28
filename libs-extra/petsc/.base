@@ -2,9 +2,9 @@
 #
 #  Module for use with 'environment-modules' package:
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
-GeneralAppSetup 
+GeneralAppSetup
 
-# no conflicts
+#### required reinstallation
 
 AddDeps "openmpi/1.8.6/gcc-4.8.1, python/2.7.10/gcc-4.8.1"
 #prereq   load gcc/4.6.0
@@ -20,6 +20,3 @@ prepend-path LIBRARY_PATH $app_dir/lib
 prepend-path MANPATH $app_dir/share/man
 prepend-path INFOPATH $app_dir/share/info
 setenv PETSC_DIR $app_dir
-
-
-

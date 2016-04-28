@@ -1,6 +1,5 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
+
 source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
 GeneralAppSetup
 
@@ -13,5 +12,4 @@ AddDeps "$module_to_load"
 prepend-path LD_LIBRARY_PATH $app_dir/lib
 prepend-path LIBRARY_PATH $app_dir/lib
 prepend-path CPATH $app_dir/include
-
 setenv SZIP_DIR $app_dir

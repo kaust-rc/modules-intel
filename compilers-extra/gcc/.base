@@ -4,20 +4,11 @@
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup ${version}/$distro
 
-#set myver [exec gcc --version | head -n1 | awk "{ print \$3 }" ]
-#puts stderr "Initial $module_name version: $myver"
-
 # Additional conflicts
 #conflict name
 
-# Prereqs
-# prereq name
-
-# Specific setup goes here, license files, path setup, etc
-
 # FIXME hardcoding these versions for now
 set arch x86_64-unknown-linux-gnu
-
 set mpc_version 0.9
 set mpfr_version 3.0.1
 set gmp_version 5.0.2
@@ -47,6 +38,3 @@ prepend-path  LD_LIBRARY_PATH  $apps_root/mpc/$mpc_version/$distro/lib
 prepend-path MANPATH $app_dir/share/man
 prepend-path INFOPATH $app_dir/share/info
 prepend-path INFOPATH $apps_root/binutils/$binutils_ver/$distro/share/info
-
-#set myver [exec gcc --version | head -n1 | awk "{ print \$3 }" ]
-#puts stderr "Current $module_name version: $myver"

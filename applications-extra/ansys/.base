@@ -29,5 +29,9 @@ prepend-path PATH $versionDir/fluent/bin
 # This is where Workbench lives
 prepend-path PATH $versionDir/Framework/bin/Linux64
 
-# This iw where common scripts used in Slurm can be found
-prepend-path PATH /opt/share/ansys/common/bin
+# This is where common scripts used in Slurm can be found
+prepend-path PATH $app_dir/../common/bin
+
+#This is the path for Electromagnetic files
+
+prepend-path PATH $app_dir/Electromagnetic/AnsysEM$version/Linux64

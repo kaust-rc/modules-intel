@@ -1,24 +1,6 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-# 
+
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup
 
-# Additional conflicts
-#conflict name
-
-# Prereqs
-# prereq name
-
-
-# Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
-prepend-path PATH $app_dir/kaustbin
-prepend-path PATH $app_dir/comsol52/multiphysics/bin
-#prepend-path MLROOT $env(KAUST_MATLAB_ROOT)
-
-
-#if { $version>=4.1 } {
-#    set-alias comsol "comsol -ckl"
-#}

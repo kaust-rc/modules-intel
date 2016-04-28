@@ -1,16 +1,8 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for perl use with 'environment-modules' package:
-# 
+
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup
 
-if ![is-loaded java] {
-    module add java
-}
+AddDeps "java/8/u25"
 
-prereq java
-
-#
-# Specific setup goes here, license files, path setup, etc
-prepend-path PATH 		$app_dir
+prepend-path PATH $app_dir

@@ -25,16 +25,20 @@ testmod(){
     #backup old variables
     OLD_KAUST_MODULES_ROOT=$KAUST_MODULES_ROOT;
     OLD_MODULEPATH=$MODULEPATH;
+    OLD_PS1=$PS1;
 
     #setting new variables (change KAUST_MODULES_ROOT according to your cloned modules path)
     KAUST_MODULES_ROOT=~/git/modules-smc;
     MODULEPATH=$KAUST_MODULES_ROOT/applications:$KAUST_MODULES_ROOT/compilers:$KAUST_MODULES_ROOT/libs:$KAUST_MODULES_ROOT/workstations;
+    PS1="$PS1\[\033[38;5;9m\]\[test mode\]\[$(tput sgr0)\] > ";
 }
 prodmod(){
+    #
     KAUST_MODULES_ROOT=$OLD_KAUST_MODULES_ROOT;
     MODULEPATH=$OLD_MODULEPATH;
+    PS1=$OLD_PS1;
 
     #removing old variables
-    unset OLD_KAUST_MODULES_ROOT OLD_MODULEPATH;
+    unset OLD_KAUST_MODULES_ROOT OLD_MODULEPATH OLD_PS1;
 }
 ```

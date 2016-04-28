@@ -22,3 +22,10 @@ prepend-path  LD_LIBRARY_PATH  $app_dir/lib64
 # Set MANPATH and INFOPATH
 prepend-path MANPATH $app_dir/share/man
 prepend-path INFOPATH $app_dir/share/info
+
+# Let's help configure scripts
+setenv CC $app_dir/bin/gcc
+setenv CXX $app_dir/bin/g++
+setenv FC $app_dir/bin/gfortran
+setenv F90 $app_dir/bin/gfortran
+setenv F77 $app_dir/bin/gfortran

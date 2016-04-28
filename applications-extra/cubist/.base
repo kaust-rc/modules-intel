@@ -1,16 +1,9 @@
 #%Module 1.0 -*- tcl -*-
 #
 #  Module for use with 'environment-modules' package:
-# 
+#
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
-GeneralAppSetup v${version}.app CUBIST_ROOT
+GeneralAppSetup
 
-
-# Additional conflicts
-# need to check if any conflicts exist
-# Prereqs
-# prereq name
-
-# Specific setup goes here, license files, path setup, etc
-# Alias
-prepend-path	PATH	$app_dir
+setenv          CUBIST_ROOT     $app_dir
+prepend-path    PATH            $app_dir

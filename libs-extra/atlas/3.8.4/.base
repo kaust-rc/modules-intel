@@ -1,0 +1,15 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+GeneralAppSetup
+
+# Load compiler based on mdoule build
+set ::module_to_load [string map {- /} $::module_build]
+
+AddDeps "$module_to_load"
+
+set     app_dir     $app_dir/${distro}/${m_arch}
+
+prepend-path LD_LIBRARY_PATH $app_dir/lib64
+prepend-path LIBRARY_PATH $app_dir/lib64
+prepend-path CPATH $app_dir/include

@@ -3,9 +3,8 @@
 source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
 GeneralAppSetup
 
-# Load compiler based on mdoule build
+# Load compiler based on module build
 set ::module_to_load [string map {- /} $::module_build]
-set ::compiler [string map {/ -} $::module_to_load]
 
 AddDeps "$module_to_load"
 

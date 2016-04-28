@@ -20,7 +20,8 @@ The following testing steps works if you cloned the repo to your cluster home/sc
   * `git push`
 
 ### You can add the following functions to your .bashrc file to make the switch easy
-`testmod(){
+```bash
+testmod(){
     #backup old variables
     OLD_KAUST_MODULES_ROOT=$KAUST_MODULES_ROOT;
     OLD_MODULEPATH=$MODULEPATH;
@@ -35,4 +36,5 @@ prodmod(){
 
     #removing old variables
     unset OLD_KAUST_MODULES_ROOT OLD_MODULEPATH;
-}`
+}
+```

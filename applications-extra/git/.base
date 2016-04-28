@@ -1,12 +1,8 @@
 #%Module 1.0 -*- tcl -*-
 
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+GeneralAppSetup
 
-# BEGIN - AA - 16 Oct 2015
-# The next two lines are fixes due to the fact that I copied it from Noor 1
-# And renamed the original v2.4.0.app folder to 2.4.0 one.
-GeneralAppSetup 2.4.0
+
 setenv GIT_EXEC_PATH $app_dir/libexec/git-core
-# END - AA - 16 Oct 2015
-
 prepend-path PATH $app_dir/bin

@@ -1,18 +1,8 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-# 
+
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup v${version}.app OPENFOAM_ROOT
 
-
-# Additional conflicts
-# need to check if any conflicts exist
-# Prereqs
-# prereq name
-
-# Specific setup goes here, license files, path setup, etc
-# Alias
 setenv	BOOST_ARCH_PATH	$app_dir/ThirdParty-$version/platforms/linux64Gcc48/boost_1_54_0
 setenv	CGAL_ARCH_PATH	$app_dir/ThirdParty-$version/platforms/linux64Gcc48/CGAL-4.3
 setenv	CMAKE_HOME	$app_dir/ThirdParty-$version/platforms/linux64Gcc48/cmake-2.8.12.1
@@ -66,7 +56,7 @@ setenv	WM_PROJECT_DIR	$app_dir/OpenFOAM-$version
 setenv	WM_PROJECT_INST_DIR	$app_dir
 setenv	WM_PROJECT	OpenFOAM
 setenv	WM_PROJECT_USER_DIR	$env(HOME)/OpenFOAM-$version
-setenv	WM_PROJECT_VERSION	$version 	 	
+setenv	WM_PROJECT_VERSION	$version
 setenv	WM_THIRD_PARTY_DIR	$app_dir/ThirdParty-$version
 
 prepend-path	MANPATH	$app_dir/ThirdParty-$version/platforms/linux64Gcc48/openmpi-1.6.5/share/man:$app_dir/ThirdParty-$version/platforms/linux64/gcc-4.8.1/man

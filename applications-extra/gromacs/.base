@@ -1,7 +1,4 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-#
 
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 set tmp [split $::version -]
@@ -10,16 +7,11 @@ set ::opt     [lindex $tmp 1]
 
 GeneralAppSetup
 
-# Additional conflicts
-#conflict name
 
-# Prereqs
-# prereq name
 AddDeps "openmpi/1.8.6/gcc-4.8.1, fftw3"
-#prereq gcc
-#prereq mpi-openmpi
+
 #prereq fftw3/3.3-openmpi-1.4.3-sse4.2-${opt}
 
-# Specific setup goes here, license files, path setup, etc
+
 prepend-path  LD_LIBRARY_PATH   $app_dir/lib
 prepend-path  PATH              $app_dir/bin

@@ -3,10 +3,6 @@
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup ${version} MATLAB_ROOT
 
-# Additional conflicts
-conflict matlab-faculty
-conflict matlab-classroom
 
-# Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
 setenv MATLABPATH [file dirname $app_dir]/common/kmat

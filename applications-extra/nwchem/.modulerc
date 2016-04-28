@@ -1,2 +1,2 @@
 #%Module 1.0 -*- tcl -*-
-module-version nwchem/6.3 default
+module-version nwchem/6.6 default

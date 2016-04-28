@@ -3,6 +3,5 @@
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup
 
-# Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib

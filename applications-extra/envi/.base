@@ -1,11 +1,8 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-#
+
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup
 
-# Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/idl/bin
 prepend-path PATH $app_dir/envi/bin
 

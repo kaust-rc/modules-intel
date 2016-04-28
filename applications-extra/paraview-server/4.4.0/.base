@@ -5,7 +5,6 @@ GeneralAppSetup
 
 AddDeps "openmpi/1.8.6/intel-2015, python/2.7.10/intel-2015, boost/1.60.0/intel-2015, cmake/3.5.1/intel-2015, mesa/10.6.1/intel-2015"
 
-# Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib
 prepend-path LD_LIBRARY_PATH $app_dir/lib/paraview-4.4

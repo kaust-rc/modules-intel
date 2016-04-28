@@ -27,4 +27,6 @@ prepend-path PATH $gw_root/QMERA/bin
 prepend-path PATH $gw_root/Scripting/bin
 prepend-path PATH $gw_root/VAMP/bin
 
-prepend-path LD_LIBRARY_PATH $app_dir/lib:$app_dir/lib/32:$lic_pack/linux/lib
+prepend-path LD_LIBRARY_PATH $app_dir/lib
+prepend-path LD_LIBRARY_PATH $app_dir/lib/32
+prepend-path LD_LIBRARY_PATH $lic_pack/linux/lib

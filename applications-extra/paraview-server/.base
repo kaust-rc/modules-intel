@@ -1,17 +1,11 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for AVIZO use with 'environment-modules' package:
-#
+
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
 GeneralAppSetup
-
-# Additional conflicts
-#conflict name
 
 AddDeps "openmpi/1.8.6/gcc-4.8.1, python/2.7.10/gcc-4.8.1, boost/1.60.0/gcc-4.8.1, cmake/3.5.1/gcc-4.8.1"
 
 
-# Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib
 prepend-path LD_LIBRARY_PATH $app_dir/lib/paraview-4.3

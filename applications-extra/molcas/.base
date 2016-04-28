@@ -1,21 +1,16 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-# 
+
 source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
-GeneralAppSetup v${version}.app MOLCAS_ROOT
+GeneralAppSetup
+
+#### Reinstallation needed to remove v().app
 
 
-# Additional conflicts
-# need to check if any conflicts exist
-# Prereqs
-# prereq name
-prereq gcc/4.8.1
+AddDeps "gcc/4.8.1"
 
-# Specific setup goes here, license files, path setup, etc
-# Alias
 prepend-path    PATH $app_dir/build
 prepend-path    PATH $app_dir/bin
+setenv      MOLCAS_ROOT     $app_dir
 setenv		MOLCAS $app_dir
 setenv		MOLCAS_CPUS 8
 

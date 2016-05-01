@@ -1,11 +1,8 @@
 #%Module 1.0 -*- tcl -*-
 
-source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
-
-prepend-path PATH $app_dir/bin
-# Added due to directory structure change from v8.13.0 - Jun 2014 by moondh
 prepend-path PATH $app_dir/KAUST/bin
 prepend-path PATH $app_dir/totalview.${version}/bin
 setenv LM_LICENSE_FILE $app_dir/license.dat

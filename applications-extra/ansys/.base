@@ -32,6 +32,8 @@ prepend-path PATH $versionDir/Framework/bin/Linux64
 # This is where common scripts used in Slurm can be found
 prepend-path PATH $app_dir/../common/bin
 
-#This is the path for Electromagnetic files
-
-prepend-path PATH $app_dir/Electromagnetic/AnsysEM$version/Linux64
+# The following directory available only for version 17.0
+if [expr { $version == 17.0 }] {
+    #This is the path for Electromagnetic files
+    prepend-path PATH $app_dir/Electromagnetic/AnsysEM$version/Linux64
+}

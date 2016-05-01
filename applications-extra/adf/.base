@@ -13,8 +13,7 @@ setenv  SCMLICENSE    $app_dir/license.txt
 # change WS OS but don't have /scratch on it.
 if { [file isdirectory /scratch] } {
     setenv SCM_TMPDIR /scratch/$env(USER)
-}
-else {
+} else {
     setenv SCM_TMPDIR /tmp
 }
 

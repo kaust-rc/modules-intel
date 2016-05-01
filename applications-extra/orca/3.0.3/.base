@@ -4,4 +4,4 @@ source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
 GeneralAppSetup
 
 AddDeps "openmpi/1.8.6/intel-2015"
-prepend-path    PATH            $app_dir/bin
+prepend-path PATH $app_dir/bin

@@ -21,24 +21,51 @@ The following testing steps works if you cloned the repo to your cluster home/sc
 
 ### You can add the following functions to your .bashrc file to make the switch easy
 ```bash
-testmod(){
-    #backup old variables
-    OLD_KAUST_MODULES_ROOT=$KAUST_MODULES_ROOT;
-    OLD_MODULEPATH=$MODULEPATH;
-    OLD_PS1=$PS1;
+tmode(){
+    if [[ ! $TEST_MODE ]];then
 
-    #setting new variables (change KAUST_MODULES_ROOT according to your cloned modules path)
-    KAUST_MODULES_ROOT=~/git/modules-smc;
-    MODULEPATH=$KAUST_MODULES_ROOT/applications:$KAUST_MODULES_ROOT/compilers:$KAUST_MODULES_ROOT/libs:$KAUST_MODULES_ROOT/workstations;
-    PS1="$PS1\[\033[38;5;9m\]\[test mode\]\[$(tput sgr0)\] > ";
+        #backup old variables
+        OLD_KAUST_MODULES_ROOT=$KAUST_MODULES_ROOT;
+        OLD_MODULEPATH=$MODULEPATH;
+        OLD_PS1=$PS1;
+
+        #setting new variables (change KAUST_MODULES_ROOT according to your cloned modules path and the used    cluster)
+        HOSTNAME=$(hostname -s)
+        case "$HOSTNAME" in
+            'noor-login2' | 'noor-login3' | 'rcfen05' | 'rcfen06')
+                echo "Noor 1 cluster modules are not managed by git."
+                exit 1
+                ;;
+            'rcfen01' | 'rcfen02' | 'da01' | 'ca128' )
+                KAUST_MODULES_ROOT=~/git/modules-noor2;
+                ;;
+            'rcfen03' | 'rcfen04' | 'ci426' | 'ci427' )
+                KAUST_MODULES_ROOT=~/git/modules-smc;
+                ;;
+            *)
+                echo "Couldn't determine development node!"
+                exit 1
+        esac
+
+        MODULEPATH=$KAUST_MODULES_ROOT/applications:$KAUST_MODULES_ROOT/compilers:$KAUST_MODULES_ROOT/libs:$KAUST_MODULES_ROOT/workstations;
+        PS1="$PS1\[\033[38;5;9m\]\[test mode\]\[$(tput sgr0)\] > ";
+        TEST_MODE=1;
+    else
+        echo "You are using the test mode!"
+    fi
 }
-prodmod(){
+pmode(){
     #
-    KAUST_MODULES_ROOT=$OLD_KAUST_MODULES_ROOT;
-    MODULEPATH=$OLD_MODULEPATH;
-    PS1=$OLD_PS1;
+    if [[ $TEST_MODE ]]; then
 
-    #removing old variables
-    unset OLD_KAUST_MODULES_ROOT OLD_MODULEPATH OLD_PS1;
+        KAUST_MODULES_ROOT=$OLD_KAUST_MODULES_ROOT;
+        MODULEPATH=$OLD_MODULEPATH;
+        PS1=$OLD_PS1;
+
+        #removing old variables
+        unset OLD_KAUST_MODULES_ROOT OLD_MODULEPATH OLD_PS1 TEST_MODE;
+    else
+        echo "You are using the production mode!"
+    fi
 }
 ```

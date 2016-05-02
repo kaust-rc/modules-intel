@@ -3,7 +3,7 @@ Git would be an easy way to manage module files on KAUST clusters.
 
 ## Cloning
 * Clone this repo to your home directory either on your laptop or smc cluster
-  * `mkdir ~/git && cd ~/git && git clone https://gitlab.kaust.edu.sa/kaust-rc/modules-smc.git`
+  * `mkdir -p ~/git && cd ~/git && git clone https://gitlab.kaust.edu.sa/kaust-rc/modules-smc.git`
 
 ## Modify module files
 * Create or modify any required file then do the following

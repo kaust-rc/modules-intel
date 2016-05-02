@@ -3,7 +3,7 @@
 #  Module for use with 'environment-modules' package:
 #
 
-source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl 
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
 #set       ::dir_name         r
 GeneralAppSetup 2.3.4/ 
 

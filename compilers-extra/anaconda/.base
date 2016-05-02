@@ -2,7 +2,7 @@
 #
 #  INTEL ifort module for use with 'environment-modules' package:
 
-source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
 conflict python

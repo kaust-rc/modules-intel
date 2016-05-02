@@ -1,7 +1,7 @@
 #%Module 1.0 -*- tcl -*-
 
 # Source common environment and then setup variables
-source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
 # Load application based on module build

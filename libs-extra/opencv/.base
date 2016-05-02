@@ -12,7 +12,7 @@
 # distro            : OS distribution
 # m_arch            : Machine architecture
 # module_extra_dir  : module's extra directory 
-source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl 
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
 #source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 
 

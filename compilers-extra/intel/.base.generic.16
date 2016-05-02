@@ -1,6 +1,6 @@
 #%Module 1.0 -*- tcl -*-                                                                                                                              
 
-source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 # We have to use a different name than INTEL_ROOT otherwise we interfere with Intel's binaries                                                        
 GeneralAppSetup ${::version} KAUST_INTEL_ROOT
 

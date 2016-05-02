@@ -6,10 +6,11 @@ GeneralAppSetup
 
 # Load application based on module build
 set ::module_to_load [string map {- /} $::module_build]
-AddDeps "$module_to_load, texlive, applications-extra, java/8"
+AddDeps "$module_to_load"
 
 # Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
-prepend-path LD_LIBRARY_PATH $app_dir/lib64:$app_dir/lib64/R/lib
+prepend-path LD_LIBRARY_PATH $app_dir/lib64
+prepend-path LD_LIBRARY_PATH $app_dir/lib64/R/lib
 prepend-path MANPATH $app_dir/share/man
 prepend-path R_LIBS $::env(HOME)/local/R_libs

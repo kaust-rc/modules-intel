@@ -47,7 +47,7 @@ tmode(){
                 exit 1
         esac
 
-        MODULEPATH=$KAUST_MODULES_ROOT/applications:$KAUST_MODULES_ROOT/compilers:$KAUST_MODULES_ROOT/libs:$KAUST_MODULES_ROOT/workstations;
+        MODULEPATH=$KAUST_MODULES_ROOT/applications:$KAUST_MODULES_ROOT/compilers:$KAUST_MODULES_ROOT/libs:$KAUST_MODULES_ROOT/workstations:$KAUST_MODULES_ROOT/sets;
         PS1="$PS1\[\033[38;5;9m\]\[test mode\]\[$(tput sgr0)\] > ";
         TEST_MODE=1;
     else

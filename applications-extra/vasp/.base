@@ -16,5 +16,5 @@ set ::mpi [string range $module_build 0 $middle_dash_index]
 set ::compiler [string range $module_build [expr $middle_dash_index + 2] end]
 set ::module_to_load [string map {- /} $mpi]/$compiler
 
-AddDeps "cuda/7.5, $module_to_load"
+AddDeps "$module_to_load"
 prepend-path PATH $app_dir/bin

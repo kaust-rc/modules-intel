@@ -1,7 +1,7 @@
 #%Module 1.0 -*- tcl -*-
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-GeneralAppSetup
+GeneralAppSetup "v${version}.app"
 
 AddDeps "fftw/3.3.4/openmpi-1.10.1-intel-2015-dp"
 

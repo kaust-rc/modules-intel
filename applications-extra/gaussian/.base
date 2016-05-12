@@ -1,39 +1,34 @@
 #%Module 1.0 -*- tcl -*-
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-GeneralAppSetup ${version}
+GeneralAppSetup
 
-# Specific setup goes here, license files, path setup, etc
-set 	gr          	$app_dir
-set 	gver        	09
+set gr $app_dir
+set gver 09
 
-setenv 	g${gver}root  	$gr
+setenv g${gver}root $gr
 
-#if { [info exists env(TMPDIR)] } {
-#    setenv GAUSS_SCRDIR $env(TMPDIR)
-#} else {
-#    setenv GAUSS_SCRDIR "/tmp"
-#}
-setenv GAUSS_SCRDIR /scratch/$::env(USER)
+# This check is here because some SMC nodes don't have /scratch, e.g. hkw*, VCC nodes, etc.
+if { [file exists /scratch)] } {
+    setenv GAUSS_SCRDIR /scratch/$::env(USER)
+} else {
+    setenv GAUSS_SCRDIR /tmp
+}
 
 # Below is from g09root/g09/bsd/g09.login, converted to tcl
-set 	EXEDIR 		$gr/g${gver}/bsd:$gr/g${gver}/local:$gr/g${gver}/extras:$gr/g${gver}
-setenv 	GAUSS_EXEDIR 	$EXEDIR
-setenv 	GAUSS_LEXEDIR 	$gr/g${gver}/linda-exe
-setenv 	GAUSS_ARCHDIR 	$gr/g${gver}/arch
-setenv 	GAUSS_BSDDIR 	$gr/g${gver}/bsd
-#setenv GV_DIR $gr/gv # not required as it doesn't exist
+set EXEDIR $gr/g${gver}/bsd:$gr/g${gver}/local:$gr/g${gver}/extras:$gr/g${gver}
+setenv GAUSS_EXEDIR $EXEDIR
+setenv GAUSS_LEXEDIR $gr/g${gver}/linda-exe
+setenv GAUSS_ARCHDIR $gr/g${gver}/arch
+setenv GAUSS_BSDDIR $gr/g${gver}/bsd
 
 prepend-path PATH $EXEDIR
-setenv 	PERLLIB 	$gr/${gver}/bsd
-setenv 	_DSM_BARRIER 	SHM
-setenv 	_RLD_ARGS 	"-log /dev/null"
-
 prepend-path LD_LIBRARY_PATH $EXEDIR
-#append-path  LD_LIBRARY_PATH $gr/gv # not required as it doesn't exist
+prepend-path MANPATH $gr/g${gver}/bsd
 
-setenv 	G${gver}BASIS 	$gr/g${gver}/basis
-prepend-path MANPATH 	$gr/g${gver}/bsd
-
-set-alias sl 		"$gr/g${gver}/tests/searchlog.csh"
-setenv 	PGI_TERM 	"trace,abort"
+setenv PERLLIB $gr/${gver}/bsd
+setenv _DSM_BARRIER SHM
+setenv _RLD_ARGS "-log /dev/null"
+setenv G${gver}BASIS $gr/g${gver}/basis
+setenv PGI_TERM "trace,abort"
+set-alias sl "$gr/g${gver}/tests/searchlog.csh"

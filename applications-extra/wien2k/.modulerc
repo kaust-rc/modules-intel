@@ -1,0 +1,2 @@
+#%Module 1.0 -*- tcl -*-
+module-version wien2k/14.2-intel-15 default

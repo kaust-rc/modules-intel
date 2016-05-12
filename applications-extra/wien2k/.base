@@ -1,17 +1,13 @@
 #%Module 1.0 -*- tcl -*-
-source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
-#source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-#GeneralAppSetup
-#GeneralAppSetup
 
 AddDeps "fftw/3.3.4/openmpi-1.10.1-intel-2015-dp"
 
-set             WIENROOT            ${app_dir}
-setenv          WIENROOT            ${app_dir}
+set WIENROOT ${app_dir}
+setenv WIENROOT ${app_dir}
+setenv SCRATCH /scratch/$::env(USER)
 
-prepend-path    STRUCTEDIT_PATH     $WIENROOT/SRC_structeditor/bin
-prepend-path    PATH                $WIENROOT
-
-#setenv          SCRATCH             ./
-setenv          SCRATCH             /scratch/$::env(USER)
+prepend-path STRUCTEDIT_PATH $WIENROOT/SRC_structeditor/bin
+prepend-path PATH $WIENROOT

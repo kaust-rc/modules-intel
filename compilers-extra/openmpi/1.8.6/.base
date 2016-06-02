@@ -21,3 +21,4 @@ setenv FC $app_dir/bin/mpifort
 setenv F90 $app_dir/bin/mpif90
 setenv F77 $app_dir/bin/mpif77
 setenv CXX $app_dir/bin/mpicxx
+setenv SLURM_MPI_TYPE pmi2

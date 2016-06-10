@@ -4,8 +4,7 @@ source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 # We have to use a different name than INTEL_ROOT otherwise we interfere with Intel's binaries
 GeneralAppSetup ${::version} KAUST_INTEL_ROOT
 
-#conflict gcc
-conflict pgi
+conflict intel
 
 set intelhome $app_dir/composerxe
 set intelarch intel64
@@ -54,7 +53,7 @@ prepend-path LIBRARY_PATH  $ipproot/lib/$intelarch
 prepend-path CPATH $ipproot/include
 prepend-path NLSPATH $ipproot/lib/$intelarch/locale/%l_%t/%N
 
-prepend-path PATH $intelhome/pkg_bin:$intelhome/bin:$intelhome/mpirt/bin/$intelarch:$intelhome/mpirt/bin/$MKL_MIC_ARCH
+prepend-path PATH $intelhome/bin:$intelhome/mpirt/bin/$intelarch:$intelhome/mpirt/bin/$MKL_MIC_ARCH
 prepend-path MIC_LD_LIBRARY_PATH $intelhome/lib/mic:$intelhome/mpirt/lib/mic
 prepend-path MIC_LIBRARY_PATH $intelhome/lib/mic:$intelhome/mpirt/lib/mic
 prepend-path LD_LIBRARY_PATH $intelhome/lib/$intelarch:$intelhome/mpirt/lib/$intelarch
@@ -62,8 +61,6 @@ prepend-path LIBRARY_PATH $intelhome/lib/$intelarch
 prepend-path NLSPATH $intelhome/lib/$intelarch/locale/%l_%t/%N
 setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses:$intelhome/licenses
 prepend-path MANPATH $intelhome/man/en_US
-prepend-path CPATH $intelhome/include
-prepend-path CPATH $intelhome/include/$intelarch
 
 set intelmpi $app_dir/mpirt
 setenv I_MPI_ROOT $intelmpi
@@ -81,7 +78,6 @@ set bindir $intelhome/bin
 setenv CC $bindir/icc
 setenv FC $bindir/ifort
 setenv F90 $bindir/ifort
-setenv F9X $bindir/ifort
 setenv F77 $bindir/ifort
 setenv CXX $bindir/icpc
 setenv AR $bindir/xiar

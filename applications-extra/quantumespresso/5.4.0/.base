@@ -1,0 +1,22 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+# Load compiler based on module build
+# Find last dash in the string
+set ::last_dash_index [expr [string last - $module_build] - 1]
+# Get substring containing first two dashes
+set ::substring [string range $module_build 0 $last_dash_index]
+set ::middle_dash_index [expr [string last - $substring] - 1]
+# Extract MPI library/compiler from module build
+set ::mpi [string range $module_build 0 $middle_dash_index]
+# Extract compiler from module build. We have to readd offsets we took off before
+set ::compiler [string range $module_build [expr $middle_dash_index + 2] end]
+set ::module_to_load [string map {- /} $mpi]/$compiler
+
+AddDeps "$module_to_load"
+prepend-path PATH $app_dir
+
+# Add YAMBO
+#prepend-path PATH $app_dir/yambo/bin

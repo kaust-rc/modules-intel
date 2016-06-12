@@ -1,18 +1,13 @@
-#%Module 1.0 -*- tcl -*-                                                                                                                              
+#%Module 1.0 -*- tcl -*-
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-# We have to use a different name than INTEL_ROOT otherwise we interfere with Intel's binaries                                                        
+# We have to use a different name than INTEL_ROOT otherwise we interfere with Intel's binaries
 GeneralAppSetup ${::version} KAUST_INTEL_ROOT
 
-conflict gcc
-conflict pgi
+conflict intel
 
-
-#puts stderr "app_dir $app_dir"
 set intelhome $app_dir/compilers_and_libraries/linux
-
 set intelarch intel64
-
 
 setenv GDB_CROSS $intelhome/debugger/gdb/intel64_mic/bin/gdb-mic
 setenv INTEL_PYTHONHOME $intelhome/debugger/python/intel64/
@@ -26,8 +21,6 @@ prepend-path PATH $intelhome/bin
 prepend-path PATH $intelhome/bin/intel64
 prepend-path PATH $intelhome/pkg_bin
 prepend-path PATH $intelhome/pkg_bin/intel64
-
-setenv INTEL_LICENSE_FILE [file dirname $intelhome]/licenses
 
 prepend-path CPATH $intelhome/mpi/intel64/include:$intelhome/ipp/include:$intelhome/mkl/include:$intelhome/tbb/include:$intelhome/daal/include
 prepend-path LD_LIBRARY_PATH $intelhome/lib/intel64:$intelhome/mpi/intel64/lib:$intelhome/lib/intel64:$intelhome/ipp/lib/intel64:$intelhome/lib/intel64:$intelhome/mkl/lib/intel64:$intelhome/tbb/lib/intel64/gcc4.4:$intelhome/debugger/libipt/intel64/lib:$intelhome/daal/lib/intel64_lin:$intelhome/tbb/lib/intel64_lin/gcc4.4:$intelhome/lib/intel64_lin
@@ -62,7 +55,7 @@ prepend-path PATH $intelhome/inspector_xe/bin64
 setenv INSPECTOR_2016_DIR $intelhome/inspector_xe
 
 #license
-setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses:$intelhome/licenses
+setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses
 
 set bindir $intelhome/bin/$intelarch
 setenv CC $bindir/icc

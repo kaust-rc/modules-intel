@@ -59,7 +59,7 @@ prepend-path MIC_LIBRARY_PATH $intelhome/lib/mic:$intelhome/mpirt/lib/mic
 prepend-path LD_LIBRARY_PATH $intelhome/lib/$intelarch:$intelhome/mpirt/lib/$intelarch
 prepend-path LIBRARY_PATH $intelhome/lib/$intelarch
 prepend-path NLSPATH $intelhome/lib/$intelarch/locale/%l_%t/%N
-setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses:$intelhome/licenses
+setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses
 prepend-path MANPATH $intelhome/man/en_US
 
 set intelmpi $app_dir/mpirt

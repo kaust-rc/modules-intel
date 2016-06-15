@@ -21,13 +21,13 @@ proc getDirName { appsroot appname } {
 proc checkLicense {} {
     global module_extra_dir
 
-    if [file exists "$module_extra_dir/.nolicense"] { 
+    if [file exists "$module_extra_dir/.nolicense"] {
        puts stderr "\033\[7;31;31m"
        puts stderr "License has expired!"
        puts stderr ""
        puts stderr "* For more information, please contact IT Software Solutions Office:"
        puts stderr ""
-       puts stderr "\tsso@kaust.edu.sa" 
+       puts stderr "\tsso@kaust.edu.sa"
        puts stderr "\033\[m"
        exit 1
     }
@@ -38,10 +38,10 @@ proc SetAppDir { suffix_dir { app_dir_env 0 } } {
     regsub -all {[\-]} ${::module_name_uc} "_" KAUST_APPNAME
     setenv KAUST_APPNAME ${KAUST_APPNAME}
 
-    if { $app_dir_env == 0 } { 
+    if { $app_dir_env == 0 } {
         set app_dir_env ${KAUST_APPNAME}_ROOT
     }
-    
+
     # app_root
     if { [info exists ::env(KAUST_APPS_ROOT)] } {
        set ::apps_root $::env(KAUST_APPS_ROOT)
@@ -100,7 +100,7 @@ proc ReportIntelVersion {} {
     global current_version
     if {[catch {set current_version [exec $::module_name --version | head -n1 | awk "{ print \$3 }" ]} e]} {
         set current_version none
-    } 
+    }
 
     puts stderr "Current $::module_name version: $current_version"
 }
@@ -113,7 +113,7 @@ proc GeneralAppSetup { { suffix_dir 0 } { app_dir_env 0 } } {
     # Set defualt suffix_dir to Version/Build, e.g. 5.5.1/openmpi2.3.0-gcc4.9.0
     if { $suffix_dir == 0 } {
         set comparison [string compare ${::version} ${::module_build}]
-	if {$comparison == 0} {
+        if {$comparison == 0} {
             set suffix_dir ${::version}
         } else {
             set suffix_dir ${::version}/${::module_build}
@@ -150,6 +150,29 @@ proc AddDeps { csv_list } {
             }
         }
     }
+}
+
+proc AddDepsBasedOnCompiler {} {
+    # Load compiler based on module build
+    set module_to_load [string map {- /} $::module_build]
+
+    AddDeps "$module_to_load"
+}
+
+proc AddDepsBasedOnMpiCompiler {} {
+    # Load compiler based on module build
+    # Find last dash in the string
+    set last_dash_index [expr [string last - $::module_build] - 1]
+    # Get substring containing first two dashes
+    set substring [string range $::module_build 0 $last_dash_index]
+    set middle_dash_index [expr [string last - $substring] - 1]
+    # Extract MPI library/compiler from module build
+    set mpi [string range $::module_build 0 $middle_dash_index]
+    # Extract compiler from module build. We have to readd offsets we took off before
+    set compiler [string range $::module_build [expr $middle_dash_index + 2] end]
+    set module_to_load [string map {- /} $mpi]/$compiler
+
+    AddDeps "$module_to_load"
 }
 
 checkLicense

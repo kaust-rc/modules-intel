@@ -2,11 +2,5 @@
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
-
-# Load compiler based on module build
-set ::module_to_load [string map {- /} $::module_build]
-
-AddDeps "$module_to_load"
-
-# Specific setup goes here, license files, path setup, etc
+AddDepsBasedOnCompiler
 prepend-path PATH $app_dir/bin

@@ -5,6 +5,14 @@ source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 AddDepsBasedOnCompiler
 
+
+if { [isnoor1] == 1 } {
+  #puts stderr noor1
+} else {
+  #puts stderr smc
+}
+
+
 # Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
 prepend-path MANPATH $app_dir/share/man

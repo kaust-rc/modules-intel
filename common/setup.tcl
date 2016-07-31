@@ -152,12 +152,35 @@ proc AddDeps { csv_list } {
     }
 }
 
+
+proc isnoor1 {} {
+
+  if {[catch {exec grep -q "6\.2" /etc/redhat-release && true} isnoor1]} {
+    #puts stderr "not redhat 6.2"
+    if {[exec hostname] == "rcfen06" || [exec hostname] == "rcfen05"} {
+      return 1
+     }
+    return 0
+  } else {
+    #puts stderr "redhat 6.2"
+    return 1
+  }
+
+ 
+
+}
+
+
+
+
 proc AddDepsBasedOnCompiler {} {
     # Load compiler based on module build
     set module_to_load [string map {- /} $::module_build]
 
     AddDeps "$module_to_load"
 }
+
+
 
 proc AddDepsBasedOnMpiCompiler {} {
     # Load compiler based on module build

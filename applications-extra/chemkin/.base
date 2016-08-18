@@ -1,16 +1,7 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-#
-source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
-
-# Additional conflicts
-#conflict name
-
-# Prereqs
-# prereq name
-
 
 # Specific setup goes here, license files, path setup, etc
 set     CHEMKIN_DIR     $app_dir
@@ -26,4 +17,3 @@ setenv REACTION_LICENSE_FILE    "28850@wthfxnsr05.kaust.edu.sa"
 
 # Basically $CHEMKIN_DIR/bin is all that's needed in $PATH as it contains scripts to submit chemkinpro job to Noor and separate script to run it on WS - moondh
 prepend-path PATH $CHEMKIN_DIR/bin:$CHEMKIN_BIN
-

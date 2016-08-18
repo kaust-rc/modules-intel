@@ -3,7 +3,7 @@
 #  Module for use with 'environment-modules' package:
 #
 
-source [file dirname $::ModulesCurrentModulefile]/../../common/common_setup2.tcl 
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
 GeneralAppSetup synopsys/2015/tcad_taurus_medici/vJ-2014.09 
  
 

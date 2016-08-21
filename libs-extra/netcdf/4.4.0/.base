@@ -17,7 +17,7 @@ set ::compiler [string range $module_build [expr $middle_dash_index + 2] end]
 set ::module_to_load [string map {- /} $mpi]/$compiler
 set ::compiler_to_load [string map {- /} $compiler]
 
-AddDeps "$module_to_load, hdf5/1.8.16/$module_to_load, zlib/1.2.8/$compiler, szip/2.1/$compiler, $compiler_to_load"
+AddDeps "$module_to_load, hdf5/1.8.16/$module_build, zlib/1.2.8/$compiler, szip/2.1/$compiler, $compiler_to_load"
 
 setenv          NETCDF          $app_dir
 prepend-path    PATH            $app_dir/bin

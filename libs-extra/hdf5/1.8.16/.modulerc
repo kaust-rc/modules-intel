@@ -1,2 +1,2 @@
 #%Module 1.0 -*- tcl -*-
-module-version hdf5/1.8.16/openmpi-1.10.1-intel-2015 default
+module-version hdf5/1.8.16/openmpi-1.10.2-intel-2015 default

@@ -1,0 +1,12 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
+GeneralAppSetup
+
+# Specific setup goes here, license files, path setup, etc
+setenv TURBODIR $app_dir
+set sysname [exec $app_dir/scripts/sysname]
+setenv TURBOMOLE_SYSNAME $sysname
+prepend-path PATH $app_dir/bin/$sysname:$app_dir/scripts
+prepend-path PATH $app_dir/thermocalc
+setenv MOLE_CONTROL $app_dir/MoleControl_2.5

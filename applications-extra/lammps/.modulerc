@@ -1,2 +1,2 @@
 #%Module 1.0 -*- tcl -*-
-module-version lammps/2014 default
+module-version lammps/2016 default

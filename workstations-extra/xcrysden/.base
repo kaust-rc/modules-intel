@@ -3,8 +3,8 @@
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
+AddDeps "gcc/5.2.0"
 
 prepend-path    PATH            $app_dir
-prepend-path    LD_LIBRARY_PATH $app_dir/KAUST/lib
 prepend-path    MANPATH         $app_dir/docs
 setenv          XCRYSDEN_TOPDIR $app_dir

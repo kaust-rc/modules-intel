@@ -1,2 +1,2 @@
 #%Module 1.0 -*- tcl -*-
-module-version vasp/5.4.1/openmpi-1.8.6-intel-2015 default
+module-version vasp/5.4.1/openmpi-1.10.2-intel-2015 default

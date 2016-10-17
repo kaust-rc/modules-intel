@@ -1,0 +1,11 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+prepend-path    PATH            $app_dir/bin
+prepend-path    LD_LIBRARY_PATH $app_dir/lib
+prepend-path    LD_LIBRARY_PATH $app_dir/KAUSTLIBS
+prepend-path    CPATH           $app_dir/include
+prepend-path    MANPATH         $app_dir/share/man
+prepend-path    INFOPATH        $app_dir/share/info

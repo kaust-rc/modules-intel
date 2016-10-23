@@ -7,8 +7,8 @@ setenv MATERIALS_STUDIO $app_dir
 
 setenv I_MPI_FABRICS "shm:tmi"
 # for debugging
-#setenv I_MPI_DEBUG "6,datetime,level,norank"
-#setenv I_MPI_HYDRA_DEBUG on
+setenv I_MPI_DEBUG "6,datetime,level,norank"
+setenv I_MPI_HYDRA_DEBUG on
 
 
 set lic_pack [file dirname $app_dir]/LicensePack

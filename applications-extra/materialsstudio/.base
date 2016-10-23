@@ -5,6 +5,12 @@ GeneralAppSetup ${::version}/MaterialsStudio${::version}
 
 setenv MATERIALS_STUDIO $app_dir
 
+export I_MPI_FABRICS=“shm:tmi"
+# for debugging
+#export I_MPI_DEBUG=6,datetime,level,norank
+#export I_MPI_HYDRA_DEBUG=on
+
+
 set lic_pack [file dirname $app_dir]/LicensePack
 set gw_root $app_dir/etc
 

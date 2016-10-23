@@ -1,19 +1,17 @@
 #%Module 1.0 -*- tcl -*-
 
-source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
 GeneralAppSetup
 
-set-alias       "qc"    	"cd \$QC"
+setenv QC           $app_dir
+setenv QCPLATFORM   LINUX_Ix86_64
+setenv QCSCRATCH    /scratch/qchem
+setenv QCLOCALSCR   /scratch/$::env(USER)
+setenv QCAUX        $app_dir/qcaux
+setenv QCMPI        mpich
+setenv QCRSH        /usr/bin/ssh
+setenv QCPROG       $app_dir/exe/qcprog.exe
+setenv QCPROG_S     $app_dir/exe/qcprog.exe_s
 
-setenv          QC  		$app_dir
-setenv          QCAUX  		$app_dir/qcaux
-setenv          QCPLATFORM  	"LINUX_Ix86_64"
-setenv          QCMPI  		"mpich"
-setenv          QCRSH  		/usr/bin/ssh
-setenv          QCPROG  	$app_dir/exe/qcprog.exe
-setenv          QCPROG_S  	$app_dir/exe/qcprog.exe_s
-setenv 		QCSCRATCH    	/scratch/$::env(USER)/qchem
-setenv 		QCLOCALSCR   	/tmp
-
-prepend-path     PATH    	$app_dir/bin
-prepend-path     PATH    	$app_dir/exe
+prepend-path PATH   $app_dir/bin
+prepend-path PATH   $app_dir/exe

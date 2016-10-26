@@ -5,6 +5,7 @@ GeneralAppSetup
 AddDepsBasedOnCompiler
 
 prepend-path PATH $app_dir/bin
+prepend-path PATH $env(HOME)/.local/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib
 prepend-path MANPATH $app_dir/share/man
 prepend-path CPATH $app_dir/include

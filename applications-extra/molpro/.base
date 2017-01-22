@@ -12,6 +12,6 @@ if { [string first ".el6" [uname release]] == -1 } {
     exit
 }
 
-AddDeps "openmpi/1.8.6/gcc-4.8.1, atlas, boost/1.60.0/gcc-4.8.1"
+AddDeps "openmpi/1.8.6/gcc-4.8.1, atlas/3.8.4/gcc-4.8.1, boost/1.60.0/gcc-4.8.1"
 
 prepend-path PATH $app_dir/bin

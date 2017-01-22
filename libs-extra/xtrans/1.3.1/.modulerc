@@ -1,0 +1,2 @@
+#%Module 1.0 -*- tcl -*-
+module-version libXdamage/1.1.4 default

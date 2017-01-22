@@ -1,0 +1,10 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+AddDepsBasedOnCompiler
+
+
+
+prepend-path LD_LIBRARY_PATH $app_dir/lib
+prepend-path PKG_CONFIG_PATH $app_dir/lib/pkgconfig

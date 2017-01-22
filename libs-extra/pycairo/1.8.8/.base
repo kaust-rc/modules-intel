@@ -1,0 +1,17 @@
+#%Module 1.0 -*- tcl -*-
+
+# Source common environment and then setup variables
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+AddDepsBasedOnCompiler
+
+
+# Specific setup goes here, license files, path setup, etc
+prepend-path MANPATH 		$app_dir/share/man
+prepend-path LD_LIBRARY_PATH 	$app_dir/lib
+prepend-path LIBRARY_PATH 	$app_dir/lib
+prepend-path CPATH 		$app_dir/include
+prepend-path PKG_CONFIG_PATH 	$app_dir/lib/pkgconfig
+prepend-path PYTHONPATH $app_dir/lib/python2.7/site-packages/
+prepend-path PYTHONPATH $app_dir/lib/python2.7/site-packages/cairo/
+

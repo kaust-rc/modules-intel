@@ -1,0 +1,14 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+AddDepsBasedOnCompiler
+
+AddDeps "python/2.7.10/intel-2015, pygobject/2.28.0/intel-2015, pycairo/1.8.8/intel-2015, gtk+/2.24.10/intel-2015, glib/2.30.0/intel-2015, libglade/2.6.4/intel-2015"
+prepend-path PATH $app_dir/bin
+prepend-path LD_LIBRARY_PATH $app_dir/lib
+prepend-path LIBRARY_PATH $app_dir/lib
+prepend-path CPATH $app_dir/include
+prepend-path PKG_CONFIG_PATH $app_dir/lib/pkgconfig
+prepend-path PYTHONPATH $app_dir/lib/python2.7/site-packages/
+prepend-path PYTHONPATH $app_dir/lib/python2.7/site-packages/gtk-2.0/

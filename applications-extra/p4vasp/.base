@@ -1,0 +1,14 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+#AddDeps "intel/2015, python/2.7.10/intel-2015, glu/9.0.0/intel-2015,  libX11/1.6.3/intel-2015, pygtk/2.24.0/intel-2015"
+AddDeps "intel/2015, python/2.7.10/intel-2015, pygtk/2.24.0/intel-2015"
+
+prepend-path PATH $app_dir/p4vasp/bin
+prepend-path LD_LIBRARY_PATH $app_dir/p4vasp/lib
+prepend-path LIBRARY_PATH $app_dir/p4vasp/lib
+prepend-path CPATH $app_dir/p4vasp/include
+prepend-path PKG_CONFIG_PATH $app_dir/p4vasp/lib/pkgconfig
+prepend-path PYTHONPATH $app_dir/p4vasp/python-packages
+prepend-path PYTHONPATH $app_dir/p4vasp/python-packages/gtk-2.0

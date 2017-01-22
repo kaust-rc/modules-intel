@@ -16,7 +16,7 @@ setenv MIC_LD_LIBRARY_PATH $intelhome/lib/mic:$intelhome/mpi/mic/lib:$intelhome/
 setenv DAALROOT $intelhome/daal
 
 prepend-path PATH $intelhome/debugger/gdb/intel64_mic/bin
-prepend-path PATH $intelhome/mpi/intel64/bin
+#prepend-path PATH $intelhome/mpi/intel64/bin
 prepend-path PATH $intelhome/bin
 prepend-path PATH $intelhome/bin/intel64
 prepend-path PATH $intelhome/pkg_bin
@@ -40,11 +40,11 @@ setenv MKLROOT $intelhome/mkl
 prepend-path NLSPATH $intelhome/lib/intel64/locale/%l_%t/%N:$intelhome/mkl/lib/intel64/locale/%l_%t/%N:$intelhome/debugger/gdb/intel64_mic/share/locale/%l_%t/%N:$intelhome/debugger/gdb/intel64/share/locale/%l_%t/%N
 prepend-path CLASSPATH $intelhome/daal/lib/daal.jar
 
-set intelmpi $intelhome/mpi
-setenv I_MPI_ROOT $intelmpi
-prepend-path PATH $intelmpi/intel64/bin
-prepend-path LD_LIBRARY_PATH $intelmpi/intel64/lib
-prepend-path MANPATH $intelmpi/man
+#set intelmpi $intelhome/mpi
+#setenv I_MPI_ROOT $intelmpi
+#prepend-path PATH $intelmpi/intel64/bin
+#prepend-path LD_LIBRARY_PATH $intelmpi/intel64/lib
+#prepend-path MANPATH $intelmpi/man
 
 # vtune
 prepend-path PATH $intelhome/vtune_amplifier_xe/bin64
@@ -58,10 +58,10 @@ setenv INSPECTOR_2016_DIR $intelhome/inspector_xe
 setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses
 
 set bindir $intelhome/bin/$intelarch
-setenv CC $bindir/icc
-setenv FC $bindir/ifort
+setenv CC  $bindir/icc
+setenv FC  $bindir/ifort
 setenv F90 $bindir/ifort
 setenv F77 $bindir/ifort
 setenv CXX $bindir/icpc
-setenv AR $bindir/xiar
-setenv LD $bindir/xild
+#setenv AR  $bindir/xiar
+setenv LD  $bindir/xild

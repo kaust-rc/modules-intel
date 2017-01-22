@@ -2,7 +2,7 @@
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
-AddDeps "openmpi/1.8.6/gcc-4.8.1, boost/1.60.0/gcc-4.8.1, matlab/R2014b, atlas"
+AddDeps "openmpi/1.8.6/gcc-4.8.1, boost/1.60.0/gcc-4.8.1, matlab/R2014b, atlas/3.8.4/gcc-4.8.1"
 
 prepend-path PATH 		$app_dir/bin
 prepend-path PATH		$app_dir/../sundials/2.5.0/bin

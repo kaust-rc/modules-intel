@@ -1,0 +1,10 @@
+#%Module 1.0 -*- tcl -*-
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+# Specific setup goes here, license files, path setup, etc
+prepend-path PATH $app_dir/Commands
+
+if { ![info exists env(TMPDIR)] } {
+    setenv TMPDIR "/tmp"
+}

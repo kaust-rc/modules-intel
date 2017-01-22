@@ -6,10 +6,8 @@ GeneralAppSetup
 AddDepsBasedOnCompiler
 
 
-if { [isnoor1] == 1 } {
-  #puts stderr noor1
-} else {
-  #puts stderr smc
+if { [is_cluster noor1] == 1 } {
+	set app_dir $app_dir.noor1
 }
 
 

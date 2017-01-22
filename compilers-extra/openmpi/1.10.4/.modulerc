@@ -1,0 +1,2 @@
+#%Module 1.0 -*- tcl -*-
+module-version openmpi/1.10.2/intel-2015 default

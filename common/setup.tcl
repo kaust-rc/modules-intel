@@ -153,21 +153,14 @@ proc AddDeps { csv_list } {
 }
 
 
-proc isnoor1 {} {
-
-  if {[catch {exec grep -q "6\.2" /etc/redhat-release && true} isnoor1]} {
-    #puts stderr "not redhat 6.2"
-    if {[exec hostname] == "rcfen06" || [exec hostname] == "rcfen05"} {
-      return 1
-     }
-    return 0
+proc is_cluster { cluster_name } {
+  if { $::env(KAUST_CLUSTER)==$cluster_name} {
+	#puts stderr "True"
+	return 1
   } else {
-    #puts stderr "redhat 6.2"
-    return 1
+	#puts stderr "False"
+	return 0
   }
-
- 
-
 }
 
 

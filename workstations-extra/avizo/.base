@@ -6,3 +6,4 @@ GeneralAppSetup
 
 prepend-path PATH $app_dir/bin
 prepend-path CPATH $app_dir/include
+prepend-path LD_LIBRARY_PATH $app_dir/lib

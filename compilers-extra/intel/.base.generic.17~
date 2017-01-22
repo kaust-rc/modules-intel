@@ -1,0 +1,67 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+# We have to use a different name than INTEL_ROOT otherwise we interfere with Intel's binaries
+GeneralAppSetup ${::version} KAUST_INTEL_ROOT
+
+conflict intel
+
+set intelhome $app_dir/compilers_and_libraries/linux
+set intelarch intel64
+
+setenv GDB_CROSS $intelhome/debugger/gdb/intel64_mic/bin/gdb-mic
+setenv INTEL_PYTHONHOME $intelhome/debugger/python/intel64/
+setenv IPPROOT $intelhome/ipp
+setenv MIC_LD_LIBRARY_PATH $intelhome/lib/mic:$intelhome/mpi/mic/lib:$intelhome/lib/mic:$intelhome/mkl/lib/mic:$intelhome/tbb/lib/mic
+setenv DAALROOT $intelhome/daal
+
+prepend-path PATH $intelhome/debugger/gdb/intel64_mic/bin
+prepend-path PATH $intelhome/mpi/intel64/bin
+prepend-path PATH $intelhome/bin
+prepend-path PATH $intelhome/bin/intel64
+prepend-path PATH $intelhome/pkg_bin
+prepend-path PATH $intelhome/pkg_bin/intel64
+
+prepend-path CPATH $intelhome/mpi/intel64/include:$intelhome/ipp/include:$intelhome/mkl/include:$intelhome/tbb/include:$intelhome/daal/include
+prepend-path LD_LIBRARY_PATH $intelhome/lib/intel64:$intelhome/mpi/intel64/lib:$intelhome/lib/intel64:$intelhome/ipp/lib/intel64:$intelhome/lib/intel64:$intelhome/mkl/lib/intel64:$intelhome/tbb/lib/intel64/gcc4.4:$intelhome/debugger/libipt/intel64/lib:$intelhome/daal/lib/intel64_lin:$intelhome/tbb/lib/intel64_lin/gcc4.4:$intelhome/lib/intel64_lin
+
+prepend-path MANPATH $intelhome/documentation/en/debugger/gdb-igfx/man/
+prepend-path MANPATH $intelhome/documentation/en/debugger/gdb-mic/man/
+prepend-path MANPATH $intelhome/documentation/en/debugger/gdb-ia/man/
+prepend-path MANPATH $intelhome/man/common
+
+setenv MPM_LAUNCHER $intelhome/debugger/mpm/mic/bin/start_mpm.sh
+prepend-path LIBRARY_PATH $intelhome/lib/intel64:$intelhome/ipp/lib/intel64:$intelhome/lib/intel64:$intelhome/mkl/lib/intel64:$intelhome/tbb/lib/intel64/gcc4.4:$intelhome/daal/lib/intel64_lin:$intelhome/tbb/lib/intel64_lin/gcc4.4:$intelhome/lib/intel64_lin
+setenv TBBROOT $intelhome/tbb
+prepend-path INFOPATH $intelhome/documentation/en/debugger/gdb-ia/info/:$intelhome/documentation/en/debugger/gdb-mic/info/:$intelhome/documentation/en/debugger/gdb-igfx/info/
+prepend-path MIC_LIBRARY_PATH $intelhome/lib/mic:$intelhome/mpi/mic/lib:$intelhome/tbb/lib/mic
+setenv GDBSERVER_MIC $intelhome/debugger/gdb/targets/mic/bin/gdbserver
+setenv MKLROOT $intelhome/mkl
+prepend-path NLSPATH $intelhome/lib/intel64/locale/%l_%t/%N:$intelhome/mkl/lib/intel64/locale/%l_%t/%N:$intelhome/debugger/gdb/intel64_mic/share/locale/%l_%t/%N:$intelhome/debugger/gdb/intel64/share/locale/%l_%t/%N
+prepend-path CLASSPATH $intelhome/daal/lib/daal.jar
+
+#set intelmpi $intelhome/mpi
+#setenv I_MPI_ROOT $intelmpi
+#prepend-path PATH $intelmpi/intel64/bin
+#prepend-path LD_LIBRARY_PATH $intelmpi/intel64/lib
+#prepend-path MANPATH $intelmpi/man
+
+# vtune
+prepend-path PATH $intelhome/vtune_amplifier_xe/bin64
+setenv VTUNE_AMPLIFIER_XE_2016_DIR $intelhome/vtune_amplifier_xe
+
+# Inspector
+prepend-path PATH $intelhome/inspector_xe/bin64
+setenv INSPECTOR_2016_DIR $intelhome/inspector_xe
+
+#license
+setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses
+
+set bindir $intelhome/bin/$intelarch
+setenv CC $bindir/icc
+setenv FC $bindir/ifort
+setenv F90 $bindir/ifort
+setenv F77 $bindir/ifort
+setenv CXX $bindir/icpc
+#setenv AR $bindir/xiar
+#setenv LD $bindir/xild

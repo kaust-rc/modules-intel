@@ -1,0 +1,9 @@
+#%Module 1.0 -*- tcl -*-
+
+# Source common environment and then setup variables
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+
+# Specific setup goes here, license files, path setup, etc
+prepend-path PATH 		$app_dir

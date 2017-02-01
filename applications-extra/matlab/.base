@@ -5,3 +5,7 @@ GeneralAppSetup ${version} MATLAB_ROOT
 
 prepend-path PATH $app_dir/bin
 setenv MATLABPATH [file dirname $app_dir]/common/kmat
+
+if { [is_cluster rsw] == 1 } {
+    set-alias matlab { matlab -nosoftwareopengl }
+}

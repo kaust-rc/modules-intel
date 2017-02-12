@@ -3,7 +3,7 @@
 #  Module for use with 'environment-modules' package:
 #
 set name synopsys-2015
-set version 2015 
+set version 2015
 
 proc ModulesHelp { } {
     global version
@@ -25,5 +25,5 @@ append-path  MODULEPATH                      /opt/share/modules/synopsys-2015/
  if { [module-info mode remove] } {
     puts stderr "Unloading module for $name"
     puts stderr "Synopsys-2015 modules now unloaded"
+    unset-alias CDE
  }
-

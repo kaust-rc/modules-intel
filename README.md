@@ -6,7 +6,7 @@ Git would be an easy way to manage module files on KAUST clusters.
   * `mkdir -p ~/git && cd ~/git && git clone https://gitlab.kaust.edu.sa/kaust-rc/modules-smc.git`
 
 ## Modify module files
-* Create or modify any required file then do the following
+* Create or modify any required file then do the following (You just need to modify -extra directories)
   * Lets say that you added `netcdf` to `libs-extra`
   * Don't forget to do a `git pull` to get latest updates
 

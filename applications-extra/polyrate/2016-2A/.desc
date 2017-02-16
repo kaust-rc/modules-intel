@@ -1,0 +1,1 @@
+Polyrate is a computer program for the calculation of chemical reaction rates of polyatomic species (and also atoms and diatoms as special cases) by variational transition state theory (VTST); conventional transition state theory is also supported. GAUSSRATE is an interface program between POLYRATE and Gaussian.

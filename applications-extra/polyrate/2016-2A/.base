@@ -1,0 +1,8 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+AddDepsBasedOnCompiler
+AddDeps "openmpi/1.10.2/intel-2015, gaussian/09-C.01"
+setenv POLYDIR $app_dir/polyrate$version
+

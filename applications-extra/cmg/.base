@@ -1,0 +1,35 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+prepend-path    PATH            $app_dir
+setenv          CMG_HOME        $app_dir
+setenv          CMG_LIC_HOST    computer_name:port
+
+## getting versions
+set             br_dir         [glob -nocomplain -directory $app_dir/br    20*]
+set             gem_dir        [glob -nocomplain -directory $app_dir/gem   20*]
+set             imex_dir       [glob -nocomplain -directory $app_dir/imex  20*]
+set             stars_dir      [glob -nocomplain -directory $app_dir/stars 20*]
+
+## Setting Installation dirs
+
+setenv          BR_DIR          $br_dir/linux_x64 
+setenv          GEM_DIR         $gem_dir/linux_x64
+setenv          IMEX_DIR        $imex_dir/linux_x64
+Setenv          STARS_DIR       $stars_dir/linux_x64
+
+## Setting exe paths
+
+prepend-path    PATH            $BR_DIR/exe
+prepend-path    PATH            $GEM_DIR/exe
+prepend-path    PATH            $IMEX_DIR/exe
+prepend-path    PATH            $STARS_DIR/exe
+
+## Setting libraries paths
+
+prepend-path    LD_LIBRARY_PATH $BR_DIR/lib
+prepend-path    LD_LIBRARY_PATH $GEM_DIR/lib
+prepend-path    LD_LIBRARY_PATH $IMEX_DIR/lib
+prepend-path    LD_LIBRARY_PATH $STARS_DIR/lib

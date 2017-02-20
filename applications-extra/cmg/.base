@@ -5,7 +5,7 @@ GeneralAppSetup
 
 prepend-path    PATH            $app_dir
 setenv          CMG_HOME        $app_dir
-setenv          CMG_LIC_HOST    computer_name:port
+setenv          CMG_LIC_HOST    WTHFLXSR02.kaust.edu.sa:2700
 
 ## getting versions
 set             br_dir         [glob -nocomplain -directory $app_dir/br    20*]

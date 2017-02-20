@@ -15,10 +15,10 @@ set             stars_dir      [glob -nocomplain -directory $app_dir/stars 20*]
 
 ## Setting Installation dirs
 
-setenv          BR_DIR          $br_dir/linux_x64 
-setenv          GEM_DIR         $gem_dir/linux_x64
-setenv          IMEX_DIR        $imex_dir/linux_x64
-Setenv          STARS_DIR       $stars_dir/linux_x64
+set          BR_DIR          $br_dir/linux_x64 
+set          GEM_DIR         $gem_dir/linux_x64
+set          IMEX_DIR        $imex_dir/linux_x64
+set          STARS_DIR       $stars_dir/linux_x64
 
 ## Setting exe paths
 

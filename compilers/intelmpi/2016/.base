@@ -7,8 +7,8 @@ module load "intel/2016"
 
 #set mpibindir $::env(I_MPI_ROOT)/intel64/bin
 set mpibindr /opt/share/intel/2016/compilers_and_libraries/linux/mpi
-setenv CC  $mpibindir/mpiicc
-setenv FC  $mpibindir/mpiifort
-setenv F90 $mpibindir/mpiifort
-setenv F77 $mpibindir/mpiifort
-setenv CXX $mpibindir/mpiicpc
+unsetenv CC  $mpibindir/mpiicc
+unsetenv FC  $mpibindir/mpiifort
+unsetenv F90 $mpibindir/mpiifort
+unsetenv F77 $mpibindir/mpiifort
+unsetenv CXX $mpibindir/mpiicpc

@@ -2,10 +2,10 @@
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup intel/$version
-module add intel/2016
 conflict openmpi
-parray env
-set mpibindir $I_MPI_ROOT/intel64/bin
+AddDeps "intel/2016"
+
+set mpibindir $::env(I_MPI_ROOT)/intel64/bin
 setenv CC  $mpibindir/mpiicc
 setenv FC  $mpibindir/mpiifort
 setenv F90 $mpibindir/mpiifort

@@ -5,7 +5,8 @@ GeneralAppSetup intel/$version
 conflict openmpi
 module load "intel/2016"
 
-set mpibindir $::env(I_MPI_ROOT)/intel64/bin
+#set mpibindir $::env(I_MPI_ROOT)/intel64/bin
+set mpibindr /opt/share/intel/2016/compilers_and_libraries/linux/mpi
 setenv CC  $mpibindir/mpiicc
 setenv FC  $mpibindir/mpiifort
 setenv F90 $mpibindir/mpiifort

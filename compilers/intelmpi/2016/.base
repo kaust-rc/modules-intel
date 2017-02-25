@@ -3,7 +3,7 @@
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup intel/$version
 conflict openmpi
-AddDeps "intel/2016"
+module load "intel/2016"
 
 set mpibindir $::env(I_MPI_ROOT)/intel64/bin
 setenv CC  $mpibindir/mpiicc

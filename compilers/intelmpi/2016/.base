@@ -3,10 +3,11 @@
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup intel/$version
 conflict openmpi
-module load "intel/2016"
+AddDeps "intel/2016"
 
-#set mpibindir $::env(I_MPI_ROOT)/intel64/bin
-set mpibindr /opt/share/intel/2016/compilers_and_libraries/linux/mpi
+# AA - Feb 25, 2017 - Unfortunately I cannot use variables from module add?!!?
+#set mpibindir ${::I_MPI_ROOT}/intel64/bin
+set mpibindir /opt/share/intel/2016/compilers_and_libraries/linux/mpi
 unsetenv CC  $mpibindir/mpiicc
 unsetenv FC  $mpibindir/mpiifort
 unsetenv F90 $mpibindir/mpiifort

@@ -7,7 +7,7 @@ AddDeps "intel/2016"
 
 # AA - Feb 25, 2017 - Unfortunately I cannot use variables from module add?!!?
 #set mpibindir ${::I_MPI_ROOT}/intel64/bin
-set mpibindir /opt/share/intel/2016/compilers_and_libraries/linux/mpi
+set mpibindir /opt/share/intel/2016/compilers_and_libraries/linux/mpi/intel64/bin
 unsetenv CC  $mpibindir/mpiicc
 unsetenv FC  $mpibindir/mpiifort
 unsetenv F90 $mpibindir/mpiifort

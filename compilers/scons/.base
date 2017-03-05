@@ -1,21 +1,12 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-#
 
-source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
-#set       ::dir_name         r
-GeneralAppSetup 2.3.4/ 
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup 2.3.4/
 
 # Prereqs
-prereq python 
+prereq python
 
 # Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib
 prepend-path MANPATH $app_dir/man
-
-
-
-
-

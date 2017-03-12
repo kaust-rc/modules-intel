@@ -48,3 +48,6 @@ if [expr { $version == 17.2 }] {
 
 #Fix for the IBM MPI error
 unsetenv SLURM_GTIDS
+
+#CFX PATH
+prepend-path PATH $versionDir/CFX/bin

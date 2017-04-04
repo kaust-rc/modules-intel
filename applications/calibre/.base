@@ -1,0 +1,16 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+prepend-path      MGLS_LICENSE_FILE                     1717@WTHFXNSR03.KAUST.EDU.SA
+
+setenv            MGC_HOME                              $app_dir/ixl_cal_2012.3_31.26
+setenv            MGC_DOC_PATH                          $app_dir/ixl_cal_2012.3_31.26/docs
+setenv            MGC_ICELLMAP_ENABLE                   332925
+setenv            MGC_CALIBRE_PRESERVE_MENU_TRIGGER     true
+setenv            CALIBRE_HOME                          $env(MGC_HOME)
+
+
+prepend-path    PATH          $env(CALIBRE_HOME)/bin
+

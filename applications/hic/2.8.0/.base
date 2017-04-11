@@ -1,0 +1,22 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+AddDepsBasedOnCompiler
+
+AddDeps "python/2.7.10/intel-2015,r/3.2.3/intel-2015,zlib/1.2.8/intel-2015,bzip2/1.0.6/intel-2015"
+prepend-path PATH $app_dir/deps/bin
+prepend-path PATH $app_dir/HiC-Pro_2.8.0/bin
+prepend-path LD_LIBRARY_PATH $app_dir/deps/lib
+prepend-path LD_LIBRARY_PATH $app_dir/lib
+prepend-path LIBRARY_PATH $app_dir/deps/lib
+prepend-path LIBRARY_PATH $app_dir/lib
+prepend-path CPATH $app_dir/deps/include
+prepend-path CPATH $app_dir/deps/include/lzo
+prepend-path CPATH $app_dir/include
+prepend-path PKG_CONFIG_PATH $app_dir/deps/lib/pkgconfig
+prepend-path PKG_CONFIG_PATH $app_dir/lib/pkgconfig
+prepend-path PYTHONPATH $app_dir/deps/lib/python2.7/site-packages/
+prepend-path PYTHONPATH $app_dir/lib/python2.7/site-packages/
+prepend-path R_LIBS $app_dir/deps/Rlibs
+

@@ -1,11 +1,11 @@
 #%Module 1.0 -*- tcl -*-
 
-source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
 setenv QC           $app_dir
 setenv QCPLATFORM   LINUX_Ix86_64
-setenv QCSCRATCH    /scratch/qchem
+setenv QCSCRATCH    /scratch/$::env(USER)/qchem
 setenv QCLOCALSCR   /scratch/$::env(USER)
 setenv QCAUX        $app_dir/qcaux
 setenv QCMPI        mpich

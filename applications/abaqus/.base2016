@@ -1,0 +1,11 @@
+#%Module 1.0 -*- tcl -*-
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+# Specific setup goes here, license files, path setup, etc
+setenv ABAQUS_VERSION 2016
+prepend-path PATH $app_dir/DassaultSystemes/SIMULIA/Commands
+
+if { ![info exists env(TMPDIR)] } {
+    setenv TMPDIR "/tmp"
+}

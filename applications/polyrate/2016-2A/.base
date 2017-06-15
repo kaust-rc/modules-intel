@@ -5,4 +5,4 @@ GeneralAppSetup
 AddDepsBasedOnCompiler
 AddDeps "openmpi/1.10.2/intel-2015, gaussian/09-C.01"
 setenv POLYDIR $app_dir/polyrate$version
-
+setenv POLYVERSION $version

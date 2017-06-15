@@ -1,0 +1,3 @@
+#%Module 1.0 -*- tcl -*-
+module-version medea/2.21.0 default
+

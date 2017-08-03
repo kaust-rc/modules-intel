@@ -5,12 +5,6 @@ source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 AddDepsBasedOnCompiler
 
-
-if { [is_cluster noor1] == 1 } {
-	set app_dir $app_dir.noor1
-}
-
-
 # Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
 prepend-path MANPATH $app_dir/share/man
@@ -22,7 +16,6 @@ prepend-path CPATH $app_dir/include
 # to use pkg_config .pc files
 #
 prepend-path PKG_CONFIG_PATH $app_dir/lib/pkgconfig
-#
 
 setenv MPICC $app_dir/bin/mpicc
 setenv CC $app_dir/bin/mpicc

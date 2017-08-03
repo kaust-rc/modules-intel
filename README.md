@@ -2,16 +2,16 @@
 Git would be an easy way to manage module files on KAUST clusters.
 
 ## Cloning
-* Clone this repo to your home directory either on your laptop or smc cluster
-  * `mkdir -p ~/git && cd ~/git && git clone https://gitlab.kaust.edu.sa/kaust-rc/modules-smc.git`
+* Clone this repo to your home directory either on your laptop or lthdevapps box
+  * `mkdir -p ~/git && cd ~/git && git clone https://gitlab.kaust.edu.sa/kaust-rc/modules-intel.git`
 
 ## Modify module files
-* Create or modify any required file then do the following (You just need to modify -extra directories)
-  * Lets say that you added `netcdf` to `libs-extra`
+* Create or modify any required file then do the following
+  * Lets say that you added `netcdf` to `libs`
   * Don't forget to do a `git pull` to get latest updates
 
 ## Testing
-The following testing steps works if you cloned the repo to your cluster home/scratch
+The following testing steps works if you cloned the repo to your cluster home
   * Modify `KAUST_MODULES_ROOT` & `MODULEPATH` environment variables to match your repo
     * `KAUST_MODULES_ROOT=~/git/modules-intel`
     * `MODULEPATH=$KAUST_MODULES_ROOT/applications:$KAUST_MODULES_ROOT/compilers:$KAUST_MODULES_ROOT/libs:$KAUST_MODULES_ROOT/workstations`

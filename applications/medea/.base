@@ -1,0 +1,12 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+ if { [module-info mode load] } {
+        set output [exec /bin/bash /opt/share/medea/common/files/optsharescript]
+        
+ }
+set username $::env(USER)
+prepend-path PATH /home/$username/MEDEA2.21/MD/Linux-x86_64
+

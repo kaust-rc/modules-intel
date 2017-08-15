@@ -1,0 +1,16 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralCompilerSetup
+
+set VERSION ${version}
+set NAME CUDA
+set ROOTDIR /opt/share/cuda/${version}
+
+setenv CUDA_INSTALL_PATH $ROOTDIR
+setenv CUDADIR $ROOTDIR
+
+prepend-path PATH $ROOTDIR/bin
+prepend-path LD_LIBRARY_PATH $ROOTDIR/lib64
+prepend-path LD_RUN_PATH $ROOTDIR/lib64
+prepend-path CPATH $ROOTDIR/include

@@ -14,3 +14,4 @@ prepend-path PATH $ROOTDIR/bin
 prepend-path LD_LIBRARY_PATH $ROOTDIR/lib64
 prepend-path LD_RUN_PATH $ROOTDIR/lib64
 prepend-path CPATH $ROOTDIR/include
+prepend-path MANPATH $ROOTDIR/doc/man

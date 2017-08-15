@@ -3,8 +3,7 @@
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
-
 setenv GIT_EXEC_PATH $app_dir/libexec/git-core
 prepend-path PATH $app_dir/bin
 prepend-path MANPATH $app_dir/share/man
-prepend-path MANPATH $app_dir/../man
+prepend-path MANPATH [file dirname $app_dir]/man

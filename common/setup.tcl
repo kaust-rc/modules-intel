@@ -5,7 +5,7 @@ set ::module_name [lrange [split [module-info name] /] 0 0]
 set ::version [lrange [split [module-info name] /] 1 1]
 set ::module_build [file tail [module-info name]]
 set ::distro el6
-module use /opt/share/spack/share/spack/modules/linux-rhel6-x86_64
+module use $::env(KAUST_APPS_ROOT)/spack/share/spack/modules/linux-rhel6-x86_64
 
 # Log what's happening
 exec $env(KAUST_MODULES_ROOT)/common/log.sh --mode [module-info mode] \

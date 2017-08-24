@@ -1,1 +1,35 @@
-.base
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+# Load compiler based on module build
+# # Find last dash in the string
+set ::last_dash_index [expr [string last - $module_build] - 1]
+# # Get substring containing first two dashes
+set ::substring [string range $module_build 0 $last_dash_index]
+set ::middle_dash_index [expr [string last - $substring] - 1]
+# # Extract MPI library/compiler from module build
+set ::mpi [string range $module_build 0 $middle_dash_index]
+# # Extract compiler from module build. We have to read offsets we took off before
+set ::compiler [string range $module_build [expr $middle_dash_index + 2] end]
+set ::module_to_load [string map {- /} $mpi]/$compiler
+
+AddDeps "intel/2015, openmpi/1.10.2-intel-15.0.6, zlib/1.2.8/$compiler, szip/2.1/$compiler"
+
+
+setenv HDF5        $app_dir
+setenv PHDF5       $app_dir
+
+setenv HDF5_DIR    $app_dir
+setenv HDF5_LIBDIR $app_dir/lib
+setenv HDF5_INCDIR $app_dir/include
+
+prepend-path  PATH             $app_dir/bin
+prepend-path  LIBRARY_PATH     $app_dir/lib
+prepend-path  LD_LIBRARY_PATH  $app_dir/lib
+prepend-path  LD_RUN_PATH      $app_dir/lib
+prepend-path  CPATH            $app_dir/include
+
+prepend-path MANPATH $app_dir/share/man
+prepend-path INFOPATH $app_dir/share/info

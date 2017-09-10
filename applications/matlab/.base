@@ -6,4 +6,6 @@ GeneralAppSetup ${version} MATLAB_ROOT
 prepend-path PATH $app_dir/bin
 setenv MATLABPATH [file dirname $app_dir]/common/kmat
 
-set-alias matlab { matlab -nosoftwareopengl }
+# Only force HW GPU acceleration on physical/remote workstations
+set host [exec hostname -s]
+if {[string match "kw*" $host] || [string match "myws*" $host] || [string match "rsws*" $host]} { set-alias matlab { matlab -nosoftwareopengl } }

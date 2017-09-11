@@ -3,7 +3,7 @@ Git would be an easy way to manage module files on KAUST clusters.
 
 ## Cloning
 * Clone this repo to your home directory either on your laptop or lthdevapps box
-  * `mkdir -p ~/git && cd ~/git && git clone https://gitlab.kaust.edu.sa/kaust-rc/modules-intel.git`
+  * `mkdir -p ~/repos && cd ~/repos && git clone https://gitlab.kaust.edu.sa/kaust-rc/modules-intel.git`
 
 ## Modify module files
 * Create or modify any required file then do the following
@@ -13,7 +13,7 @@ Git would be an easy way to manage module files on KAUST clusters.
 ## Testing
 The following testing steps works if you cloned the repo to your cluster home
   * Modify `KAUST_MODULES_ROOT` & `MODULEPATH` environment variables to match your repo
-    * `KAUST_MODULES_ROOT=~/git/modules-intel`
+    * `KAUST_MODULES_ROOT=~/repos/modules-intel`
     * `MODULEPATH=$KAUST_MODULES_ROOT/applications:$KAUST_MODULES_ROOT/compilers:$KAUST_MODULES_ROOT/libs:$KAUST_MODULES_ROOT/workstations`
   * If the tests passed successfully, commit and push your changes
   * `git commit -am "Adding netcdf libraries"`
@@ -33,7 +33,7 @@ tmode(){
         HOSTNAME=$(hostname -s)
         case "$HOSTNAME" in
             'lthdevapps' )
-                KAUST_MODULES_ROOT=~/git/modules-intel;
+                KAUST_MODULES_ROOT=~/repos/modules-intel;
                 ;;
             dm* )
                 KAUST_MODULES_ROOT=~/repos/modules-intel;

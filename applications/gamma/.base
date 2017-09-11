@@ -1,0 +1,39 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+# TODO: need to be review, when a newer version is install. To standardize the installtion tree
+set GAMMA_HOME $app_dir
+set MSP_HOME   $GAMMA_HOME/MSP
+set ISP_HOME   $GAMMA_HOME/ISP
+set DIFF_HOME  $GAMMA_HOME/DIFF
+set DISP_HOME  $GAMMA_HOME/DISP
+set LAT_HOME   $GAMMA_HOME/LAT
+set IPTA_HOME  $GAMMA_HOME/IPTA
+set GDAL_TOOLS $GAMMA_HOME/gdal-2.1.3/2.1.3
+set FFTW       $GAMMA_HOME/fftw-3.3.5/3.3.5
+
+prepend-path PATH $MSP_HOME/bin
+prepend-path PATH $ISP_HOME/bin
+prepend-path PATH $DIFF_HOME/bin
+prepend-path PATH $DISP_HOME/bin
+prepend-path PATH $LAT_HOME/bin
+prepend-path PATH $IPTA_HOME/bin
+
+prepend-path PATH $GDAL_TOOLS/bin
+prepend-path PATH $FFTW/bin
+
+prepend-path PATH $MSP_HOME/scripts
+prepend-path PATH $ISP_HOME/scripts
+prepend-path PATH $DIFF_HOME/scripts
+prepend-path PATH $LAT_HOME/scripts
+prepend-path PATH $IPTA_HOME/scripts
+
+prepend-path LD_LIBRARY_PATH $GAMMA_HOME/lib
+prepend-path LD_LIBRARY_PATH $GDAL_TOOLS/lib
+prepend-path LD_LIBRARY_PATH $FFTW/lib
+prepend-path LIBRARY_PATH    $GDAL_TOOLS/lib
+prepend-path LIBRARY_PATH    $FFTW/lib
+prepend-path CPATH           $GDAL_TOOLS/include
+prepend-path CPATH           $FFTW/include

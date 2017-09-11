@@ -35,6 +35,15 @@ tmode(){
             'lthdevapps' )
                 KAUST_MODULES_ROOT=~/git/modules-intel;
                 ;;
+            dm* )
+                KAUST_MODULES_ROOT=~/repos/modules-intel;
+                ;;
+            rsws* )
+                KAUST_MODULES_ROOT=~/repos/modules-intel;
+                ;;
+            myws* )
+                KAUST_MODULES_ROOT=~/repos/modules-intel;
+                ;;
             *)
                 echo "Couldn't determine development node!"
                 exit 1

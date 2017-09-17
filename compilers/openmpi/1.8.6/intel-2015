@@ -1,1 +1,8 @@
-.base
+#%Module 1.0 -*- tcl -*-
+
+# Source common environment and then setup variables
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+AddDepsBasedOnCompiler
+
+module load openmpi/1.8.6-intel-15.0.6

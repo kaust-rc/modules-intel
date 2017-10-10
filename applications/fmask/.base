@@ -5,11 +5,11 @@ GeneralAppSetup
 
 set app_dir $app_dir/v81
 prepend-path PATH $app_dir/Fmask
-prepend_path LD_LIBRARY_PATH $app_dir/runtime/glnxa64
-prepend_path LD_LIBRARY_PATH $app_dir/bin/glnxa64
-prepend_path LD_LIBRARY_PATH $app_dir/sys/os/glnxa64
-prepend_path LD_LIBRARY_PATH $app_dir/sys/java/jre/glnxa64/jre/lib/amd64/native_threads
-prepend_path LD_LIBRARY_PATH $app_dir/sys/java/jre/glnxa64/jre/lib/amd64/server
-prepend_path LD_LIBRARY_PATH $app_dir/sys/java/jre/glnxa64/jre/lib/amd64
+prepend-path LD_LIBRARY_PATH $app_dir/runtime/glnxa64
+prepend-path LD_LIBRARY_PATH $app_dir/bin/glnxa64
+prepend-path LD_LIBRARY_PATH $app_dir/sys/os/glnxa64
+prepend-path LD_LIBRARY_PATH $app_dir/sys/java/jre/glnxa64/jre/lib/amd64/native_threads
+prepend-path LD_LIBRARY_PATH $app_dir/sys/java/jre/glnxa64/jre/lib/amd64/server
+prepend-path LD_LIBRARY_PATH $app_dir/sys/java/jre/glnxa64/jre/lib/amd64
 
 setenv XAPPLRESDIR $app_dir/X11/app-defaults

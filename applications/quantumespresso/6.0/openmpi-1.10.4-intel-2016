@@ -2,7 +2,7 @@
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
-AddDeps "intel/2016, openmpi/1.10.4-intel-16.0.3"
+AddDeps "intel/2016, openmpi/1.10.4/intel-2016"
 prepend-path PATH $app_dir/bin
 
 # Add YAMBO
